@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.homework51.R;
 import com.example.homework51.databinding.FragmentHomeBinding;
+import com.example.homework51.ui.gallery.utils.Constance;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -40,9 +41,9 @@ private FragmentHomeBinding binding;
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String userTask="1";
-        Log.e("ololo","onViewCreated"+userTask);
-        getText(userTask,Log.e("ololo","gannn"+userTask));
+        if (getArguments() != null){
+            String s = getArguments().getString(Constance.USER_TASK);
+        }
     }
 
     private void getText(String userTask, int ololo) {
